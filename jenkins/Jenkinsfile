@@ -1,11 +1,9 @@
-  def NEXUS_VERSION = "nexus3"
-      def  NEXUS_PROTOCOL = "http"
-       def NEXUS_URL = "52.188.135.219:8081"
-       def NEXUS_REPOSITORY = "Nexusrepo"
-       def NEXUS_CREDENTIAL_ID = "nexus"
-      
+        def NEXUS_VERSION = "nexus3"
+        def NEXUS_PROTOCOL = "http"
+        def NEXUS_URL ="52.188.142.197:9000"
+        def NEXUS_REPOSITORY = "nexrepo"
+        def NEXUS_CREDENTIAL_ID = "nexus"
 node{
-   
         stage('Checkout'){
            git 'https://github.com/ananthand6/Testforteam'
           } 
@@ -19,7 +17,7 @@ node{
         stage('SonarQube Analysis'){
             def mavenHome = tool name: 'maven 3.6.3' , type: 'maven'
             withSonarQubeEnv('sonar'){
-               sh "${mavenHome}/bin/mvn sonar:sonar -Dsonar.projectKey=maktum -Dsonar.host.url=http://52.188.134.128:9000 -Dsonar.login=2288119e832b89eb321aecb230b78563b9de0514"
+               sh "${mavenHome}/bin/mvn sonar:sonar -Dsonar.projectKey=sonar -Dsonar.host.url=http://52.188.142.197:9000 -Dsonar.login=b1bd713122b375966857dd5719c256767c11c67b"
             }
          }
     
@@ -62,7 +60,6 @@ node{
                                  error "* File: ${artifactPath}, could not be found";
                     }
                 }
-          
+        } 
    
-}
-}
+ }
