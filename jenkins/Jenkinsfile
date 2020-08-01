@@ -20,27 +20,7 @@ node{
                sh "${mavenHome}/bin/mvn sonar:sonar -Dsonar.projectKey=sonar -Dsonar.host.url=http://52.188.142.197:9000 -Dsonar.login=dce0b2ed7272ddc5f2dd936c716afca56c5ad65b"
             }
          }
-        
-        stage('Upload jar to nexus'){
-                steps{
-                        nexusArtifactUploader artifacts: [
-                                [
-                                        artifactId: 'my-app', 
-                                        classifier: '', 
-                                        file: 'target/my-app-1.0.0.jar', 
-                                        type: 'jar'
-                                ]
-                        ], 
-                        credentialsId: 'nexus3', 
-                        groupId: 'com.mycompany.app', 
-                        nexusUrl: '52.179.118.214', 
-                        nexusVersion: 'nexus2', 
-                        protocol: 'http', 
-                        repository: 'http://52.179.118.214:8081/repository/samplenex/', 
-                        version: '1.0.0'
-                }
-        }
-    
+          
         stage("Publish to nexus") {
                 script {
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
