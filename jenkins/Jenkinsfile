@@ -52,7 +52,7 @@ node{
                                 // Lets upload the pom.xml
                                 [artifactId: pom.artifactId,
                                 classifier: '',
-                                file: "pom.jar",
+                                file: "pom",
                                 type: "jar"]
                             ]
                         );
