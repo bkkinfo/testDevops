@@ -1,7 +1,7 @@
         def NEXUS_VERSION = "nexus3"
         def NEXUS_PROTOCOL = "http"
         def NEXUS_URL ="52.188.142.197:9000"
-        def NEXUS_REPOSITORY = "nexrepo"
+        def NEXUS_REPOSITORY = "samplenex"
         def NEXUS_CREDENTIAL_ID = "nexus1"
 node{
         stage('Checkout'){
