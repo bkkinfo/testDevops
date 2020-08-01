@@ -5,7 +5,7 @@
         def NEXUS_CREDENTIAL_ID = "nexus1"
 node{
         stage('Checkout'){
-           git 'https://github.com/ananthand6/Testforteam'
+           git 'https://github.com/bkkinfo/testDevops'
           } 
           
         
